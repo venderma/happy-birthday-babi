@@ -42,7 +42,11 @@ button:hover {
     background: #2f596f;
 }
 
-/* CAKE */
+/* CAKE SECTION */
+.cake-section {
+    min-height: 100vh; /* ensures scrolling space */
+}
+
 .cake {
     position: relative;
     margin: 160px auto;
@@ -59,7 +63,6 @@ button:hover {
     height: 35px;
     background: #e0e0e0;
     border-radius: 50%;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 /* Main cake */
@@ -70,10 +73,9 @@ button:hover {
     margin: 0 auto;
     border-radius: 25px;
     position: relative;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-/* Blue drip */
+/* Drip */
 .drip {
     position: absolute;
     top: -15px;
@@ -82,76 +84,6 @@ button:hover {
     height: 50px;
     background: #1f7ea1;
     border-radius: 50%;
-}
-
-.drip::after {
-    content: "";
-    position: absolute;
-    width: 25px;
-    height: 60px;
-    background: #1f7ea1;
-    top: 20px;
-    left: 50px;
-    border-radius: 15px;
-}
-
-/* Paint splashes */
-.splash {
-    position: absolute;
-    border-radius: 50%;
-}
-
-.yellow { background: #f4c542; width: 50px; height: 40px; top: 70px; left: 30px; }
-.red { background: #e34a4a; width: 35px; height: 25px; bottom: 25px; right: 35px; }
-.orange { background: #ff8c42; width: 25px; height: 25px; top: 110px; right: 60px; }
-
-/* Palette */
-.palette {
-    position: absolute;
-    top: -90px;
-    left: 95px;
-    width: 130px;
-    height: 100px;
-    background: #f4f4f4;
-    border-radius: 60% 50% 50% 60%;
-    transform: rotate(-10deg);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.color-dot {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    position: absolute;
-}
-
-.c1 { background: #1f7ea1; top: 25px; left: 25px; }
-.c2 { background: #f4c542; top: 25px; left: 60px; }
-.c3 { background: #e34a4a; top: 55px; left: 35px; }
-.c4 { background: #3aa66f; top: 55px; left: 75px; }
-
-/* Brushes */
-.brush {
-    position: absolute;
-    width: 10px;
-    height: 100px;
-    background: #333;
-    top: -150px;
-    border-radius: 5px;
-}
-
-.brush1 { left: 140px; }
-.brush2 { left: 175px; }
-
-.brush::before {
-    content: "";
-    position: absolute;
-    top: -25px;
-    left: -5px;
-    width: 20px;
-    height: 25px;
-    background: orange;
-    border-radius: 50% 50% 0 0;
 }
 
 /* Candle */
@@ -182,10 +114,10 @@ button:hover {
     to { transform: scale(1.15); opacity: 0.85; }
 }
 
-/* LOVE LETTER */
+/* LETTER SECTION */
 .message {
     display: none;
-    margin: 120px auto 80px auto;
+    margin: 120px auto 100px auto;
     width: 90%;
     max-width: 750px;
     background: white;
@@ -195,7 +127,6 @@ button:hover {
     line-height: 1.9em;
     color: #3a4f5c;
     box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-    animation: fadeIn 2s ease forwards;
 }
 
 .message h2 {
@@ -208,60 +139,44 @@ button:hover {
     font-weight: bold;
     color: #3a6d8c;
 }
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
 </style>
 </head>
 
 <body>
 
-<h1>Happy Birthday Babi 🤍</h1>
-<p class="subtitle">Press start and blow your candle 💨</p>
+<div class="cake-section">
+    <h1>Happy Birthday My Love 🤍</h1>
+    <p class="subtitle">Press start and blow your candle 💨</p>
 
-<button onclick="startMic()">Start</button>
+    <button onclick="startMic()">Start</button>
 
-<div class="cake">
-    <div class="plate"></div>
+    <div class="cake">
+        <div class="plate"></div>
 
-    <div class="main-cake">
-        <div class="drip"></div>
-        <div class="splash yellow"></div>
-        <div class="splash red"></div>
-        <div class="splash orange"></div>
-    </div>
+        <div class="main-cake">
+            <div class="drip"></div>
+        </div>
 
-    <div class="palette">
-        <div class="color-dot c1"></div>
-        <div class="color-dot c2"></div>
-        <div class="color-dot c3"></div>
-        <div class="color-dot c4"></div>
-    </div>
-
-    <div class="brush brush1"></div>
-    <div class="brush brush2"></div>
-
-    <div class="candle">
-        <div class="flame" id="flame"></div>
+        <div class="candle">
+            <div class="flame" id="flame"></div>
+        </div>
     </div>
 </div>
 
-<!-- LOVE LETTER BELOW -->
+<!-- LETTER BELOW CAKE -->
 <div class="message" id="message">
     <h2>To the Love of My Life,</h2>
 
     <p>Happiest birthday to my dearest Marty. 🤍</p>
 
     <p>
-    I thank for this day because you exist and that alone makes me the happiest person alive.
+    I thank God for this day because you exist — and that alone makes me the happiest person alive.
     I thank the universe for letting our paths cross and for allowing us to meet in this lifetime.
     </p>
 
     <p>
     I pray that the world becomes kinder to you, that it showers you with endless love,
-    and fills your heart with happiness because you deserve nothing less.
+    and fills your heart with happiness — because you deserve nothing less.
     You bring so much joy into everyone’s life simply by being you.
     </p>
 
@@ -315,14 +230,12 @@ function detectBlow() {
 }
 
 function blowOut() {
-    document.getElementById("flame").style.transition = "opacity 1s ease";
     document.getElementById("flame").style.opacity = 0;
 
     setTimeout(() => {
         document.getElementById("flame").style.display = "none";
         document.getElementById("message").style.display = "block";
-        document.getElementById("message").scrollIntoView({ behavior: "smooth" });
-    }, 1000);
+    }, 800);
 }
 </script>
 
